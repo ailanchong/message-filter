@@ -1,5 +1,11 @@
 #include "window.h"
 
+window* window::p = new window();
+window* window::instance(){
+    return p;
+}
+
+
 bool window::check(wstring msg, string usr_id){
     msg.push_back(0);
     wchar_t pre, next;

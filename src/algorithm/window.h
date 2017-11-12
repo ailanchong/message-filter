@@ -27,11 +27,5 @@ private:
 
 };
 
-window* window::p = new window();
-window* window::instance(){
-    return p;
-}
-
-
 
 #endif
