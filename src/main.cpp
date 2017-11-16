@@ -10,7 +10,9 @@ using namespace std;
 int main()
 {
 	//initialize("server.properties");
-	ifstream ifs("test", ifstream::binary);
+	ifstream ifs("36jistart_sort", ifstream::binary);
+	ofstream ofsadv("aaaa",ofstream::binary);
+	ofstream ofsnadv("bbbb",ofstream::binary);
 	string str;
 	while (getline(ifs, str))
 	{
@@ -29,14 +31,17 @@ int main()
 		wstring cmstr = string_to_wstring(chat_content);
 		bool ret = window::instance()->check(cmstr, user_id);
 		if (ret == true)
-			cout<<"asdasdsda"<<endl;
+			ofsadv<<"asdasdsda"<<endl;
+			
 		else
-			cout<<"ASDSAdsa"<<endl;
+			ofsnadv<<"ASDSAdsa"<<endl;
 		//string xxx = "";
 		//check(user_id, atoi(time_stamp), chat_content, xxx);
 		cJSON_Delete(json);
 	}	
 	ifs.close();
+	ofsadv.close();
+	ofsnadv.close();
 	return 0;
 }
 
